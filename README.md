@@ -71,4 +71,4 @@ default_domain: "url_to_route_everything_else"
 
 I should note, this isn't 100% full proof so please use something more professional and well done in productin like [Caddy](https://caddyserver.com/) or [Traefik](https://traefik.io/traefik/).
 
-
+#### TODO: Add better error handling specifically for the YAML options.

@@ -9,7 +9,9 @@ To get self signed to mostly behave,
 
 To generate we use openssl on Linux:
 
-`openssl req -newkey rsa:4096 -nodes -keyout bind.key -x509 -days 365 -out bind.crt -addext 'subjectAltName = IP:127.0.0.1' -subj '/C=US/ST=CA/L=SanFrancisco/O=MyCompany/OU=RND/CN=localhost/'`
+```ruby
+openssl req -newkey rsa:4096 -nodes -keyout bind.key -x509 -days 365 -out bind.crt -addext 'subjectAltName = IP:127.0.0.1' -subj '/C=US/ST=CA/L=SanFrancisco/O=MyCompany/OU=RND/CN=localhost/'
+```
 
 Something like above^^^
 
@@ -24,7 +26,7 @@ sudo apt-get install ca-certificates
 Copy the certificate with `.crt` extension:
 
 ```ruby
-cp cacert.crt /usr/share/ca-certificates
+cp bind.crt /usr/share/ca-certificates
 ```
 
 And then reconfigure `ca-certificates`:
@@ -55,8 +57,8 @@ Example config:
 ```ruby
 listen: "0.0.0.0:443"
 server: "127.0.0.1:4443"
-cert_file: "cert.crt"
-key_file: "key.key"
+cert_file: "bind.crt"
+key_file: "bind.key"
 paths: [ "/path1", "/path2" ]
 default_domain: "url_to_route_everything_else"
 ```

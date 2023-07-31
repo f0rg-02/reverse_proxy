@@ -63,7 +63,7 @@ paths: [ "/path1", "/path2" ]
 default_domain: "url_to_route_everything_else"
 ```
 
-`listen` is for the port the proxy server to listen on and server is the server it should reroute to.
+`listen` is for the port the proxy server to listen on and `server` is the server it should reroute to. Probably should rename these to be better, but for now this will do.
 
 `cert_file` and `key_file` is your x509 or whatever certificates that you either generated yourself or you obtained some other means.
 
